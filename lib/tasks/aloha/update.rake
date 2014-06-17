@@ -2,12 +2,16 @@ alohaeditor_dirname = "alohaeditor-#{Aloha::VERSION}"
 
 namespace :aloha do
 
+  # change path
+  # from: https://github.com/downloads/alohaeditor/Aloha-Editor/#{alohaeditor_dirname}.zip
+  # to:   http://aloha-editor.org/builds/stable/#{alohaeditor_dirname}.zip
+
   desc "Update Aloha Editor to version specified in gem"
   task :update do
     print "Downloading zip archive ..."
-    puts "Downloading https://github.com/downloads/alohaeditor/Aloha-Editor/#{alohaeditor_dirname}.zip ..."
+    puts "Downloading http://aloha-editor.org/builds/stable/#{alohaeditor_dirname}.zip ..."
     `mkdir -p tmp`
-    `curl -L -# https://github.com/downloads/alohaeditor/Aloha-Editor/#{alohaeditor_dirname}.zip -o tmp/#{alohaeditor_dirname}.zip`
+    `curl -L -# http://aloha-editor.org/builds/stable/#{alohaeditor_dirname}.zip -o tmp/#{alohaeditor_dirname}.zip`
     puts " DONE"
 
     print "Extracting core files ..."
