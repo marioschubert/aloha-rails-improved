@@ -2,7 +2,7 @@ alohaeditor_dirname = "alohaeditor-#{Aloha::VERSION}"
 
 namespace :aloha do
 
-  # change path
+  # changed path
   # from: https://github.com/downloads/alohaeditor/Aloha-Editor/#{alohaeditor_dirname}.zip
   # to:   http://aloha-editor.org/builds/stable/#{alohaeditor_dirname}.zip
 
@@ -21,8 +21,9 @@ namespace :aloha do
 
     # Processing of core files (i.e. removeing some plugins) goes here...
 
-    print "Copying core files ..."
+    print "Copying core files to vendor/assets/javascripts ..."
     `rm -rf vendor/assets/javascripts/aloha`
+    `mkdir -p vendor/assets/javascripts`
     `mv tmp/#{alohaeditor_dirname}/aloha vendor/assets/javascripts/.`
     puts " DONE"
 
