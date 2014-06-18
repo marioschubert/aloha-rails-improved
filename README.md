@@ -78,6 +78,18 @@ You should make these things to start using Aloha Editor in your app:
 
 Enjoy too!
 
+## Usage from local files
+
+1. Generate your Aloha Editor config: `rails generate aloha:install`. Use `--coffee` option to use CoffeeScript for js-config file.
+2. Download Aloha: run `rake aloha:update`
+3. Load Aloha Editor config file.
+       * insert this in your layout: `<%= javascript_include_tag 'aloha-config' %>`
+4. Load dependencies (only [RequireJS](http://requirejs.org/) library is required now).
+       * insert this in your layout: `<%= aloha_requirejs_local %>`
+5. Load Aloha Editor:
+       * insert this in your layout: `<%= aloha_local %>`
+
+
 ## Additional information
 
 See code (and tests) for aditional information.
